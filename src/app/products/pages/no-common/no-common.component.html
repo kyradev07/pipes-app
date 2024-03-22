@@ -1,1 +1,54 @@
-<p>no-common works!</p>
+<p-panel header="Uncommon Pipes" class="p-1">
+  <p>
+    Pipes includes in Angular - Usually, in common module
+  </p>
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+        <p>Greetings {{ gender | i18nSelect: genderMap }} {{ name }}, it's a pleasure to invite you to our event.</p>
+        <p-button label="Change Guest" (click)="changeGuest()"></p-button>
+      </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+        <p>{{ clients.length | i18nPlural: clientMap }}</p>
+        <p-button label="Dispatch Client" (click)="dispatchClient()"></p-button>
+      </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="Slice Pipe" [toggleable]="true">
+        <h4>Original Array</h4>
+        <p>{{ clients }}</p>
+        <h4>Sliced Array, from position 3</h4>
+        <p>{{ clients | slice:3 }}</p>
+        <h4>Sliced Array, from position 3 to position 5</h4>
+        <p>{{ clients | slice:3:5 }}</p>
+        <h4>Sliced Array, from position 3 to position -2</h4>
+        <p>{{ clients | slice:0:-2 }}</p>
+      </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="JSON Pipe" [toggleable]="true">
+
+      </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="Key:Value Pipe" [toggleable]="true">
+
+      </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+      <p-fieldset legend="Async Pipe" [toggleable]="true">
+
+      </p-fieldset>
+    </div>
+  </div>
+</p-panel>
+
+
+
