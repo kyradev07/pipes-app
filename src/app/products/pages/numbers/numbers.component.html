@@ -22,11 +22,22 @@
     </p>
 
     <p class="col-12 md:col-4">
-      <p-card header="Currency HNL | currency">
-        {{ total }} to currency pipe: <strong>{{ total | currency: 'HNL':'symbol-narrow' }}</strong>
+      <p-card header="Currency HNL, symbol and decimals | currency">
+        {{ total }} to currency pipe: <strong>{{ total | currency: 'HNL':'symbol-narrow':'1.4-4' }}</strong>
       </p-card>
     </p>
 
+    <p class="col-12 md:col-4">
+      <p-card header="Percentage | percent">
+        {{ percent }} to percent pipe: <strong>{{ percent | percent }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-4">
+      <p-card header="Percentage with decimals">
+        {{ percent }} to percent pipe: <strong>{{ percent | percent: '1.3-3' }}</strong>
+      </p-card>
+    </p>
 
   </div>
 </p-panel>
