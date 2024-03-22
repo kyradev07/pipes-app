@@ -1,0 +1,35 @@
+<p-panel header="Number And Currency Pipes" class="p-1">
+  <p>
+    Pipes includes in Angular - Usually, in common module
+  </p>
+  <div class="grid">
+    <p class="col-12 md:col-4">
+      <p-card header="Decimal | number">
+        {{ total }} with decimal(number) pipe: <strong>{{ total | number:'1.2-4' }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-4">
+      <p-card header="Currency default US dollar | currency">
+        {{ total }} to currency pipe: <strong>{{ total | currency }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-4">
+      <p-card header="Currency COP | currency">
+        {{ total }} to currency pipe: <strong>{{ total | currency: 'COP' }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-4">
+      <p-card header="Currency HNL | currency">
+        {{ total }} to currency pipe: <strong>{{ total | currency: 'HNL':'symbol-narrow' }}</strong>
+      </p-card>
+    </p>
+
+
+  </div>
+</p-panel>
+
+
+

@@ -1,0 +1,47 @@
+<p-panel header="Text And Date Pipes" class="p-1">
+  <p>
+    Pipes includes in Angular - Usually, in common module
+  </p>
+  <div class="grid">
+    <p class="col-12 md:col-4">
+      <p-card header="Uppercase | uppercase">
+        {{ lower }} in uppercase: <strong>{{ lower | uppercase }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-4">
+      <p-card header="Lowercase | lowercase">
+        {{ upper }} in lowercase: <strong>{{ upper | lowercase }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-4">
+      <p-card header="Titlecase | titlecase">
+        {{ fullName }} in titlecase: <strong>{{ fullName | titlecase }}</strong>
+      </p-card>
+    </p>
+
+    <p class="col-12 md:col-12">
+      <p-card header="Dates">
+        <p>To use locale parameter in date pipe, import the required time zone and register it in app.module</p>
+        <ul>
+          <li><strong>Date: -></strong> {{ customDate }}</li>
+          <li><strong>| date: -></strong> {{ customDate | date }}</li>
+          <li><strong>| date: 'short' -></strong> {{ customDate | date: 'short' }}</li>
+          <li><strong>| date: 'long' -></strong> {{ customDate | date: 'long' }}</li>
+          <li><strong>| date: 'MMMM' -></strong> {{ customDate | date: 'MMMM' }}</li>
+          <li><strong>| date: 'MMMM dd, yyyy' -></strong> {{ customDate | date: 'MMMM dd, yyyy' }}</li>
+          <hr>
+          <li><strong>| date: 'long':'GMT-6' -></strong> {{ customDate | date: 'long':'GMT-6' }}</li>
+          <li><strong>| date: 'long':'GMT-4' -></strong> {{ customDate | date: 'long':'GMT-5' }}</li>
+          <li><strong>| date: 'long':'':'es-CO' -></strong> {{ customDate | date: 'long':'':'en-US' }}</li>
+          <li><strong>| date: 'long':'':'fr-CA' -></strong> {{ customDate | date: 'long':'':'fr-CA' }}</li>
+        </ul>
+      </p-card>
+    </p>
+
+  </div>
+</p-panel>
+
+
+
