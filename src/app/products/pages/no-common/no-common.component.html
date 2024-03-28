@@ -13,38 +13,48 @@
     <div class="col-12 md:col-6">
       <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
         <p>{{ clients.length | i18nPlural: clientMap }}</p>
-        <p-button label="Dispatch Client" (click)="dispatchClient()"></p-button>
+        <p-button [disabled]="clients.length === 0" label="Dispatch Client" (click)="dispatchClient()"></p-button>
+        <p-button [disabled]="clients.length > 0" label="Reset" (click)="resetClients()" class="ml-1"></p-button>
       </p-fieldset>
     </div>
 
     <div class="col-12 md:col-6">
       <p-fieldset legend="Slice Pipe" [toggleable]="true">
         <h4>Original Array</h4>
-        <p>{{ clients }}</p>
+        <p>{{ customers }}</p>
         <h4>Sliced Array, from position 3</h4>
-        <p>{{ clients | slice:3 }}</p>
+        <p>{{ customers | slice:3 }}</p>
         <h4>Sliced Array, from position 3 to position 5</h4>
-        <p>{{ clients | slice:3:5 }}</p>
+        <p>{{ customers | slice:3:5 }}</p>
         <h4>Sliced Array, from position 3 to position -2</h4>
-        <p>{{ clients | slice:0:-2 }}</p>
+        <p>{{ customers | slice:0:-2 }}</p>
       </p-fieldset>
     </div>
 
     <div class="col-12 md:col-6">
       <p-fieldset legend="JSON Pipe" [toggleable]="true">
-
+        <pre>{{ person | json }}</pre>
+        <span>{{ person | json }}</span>
       </p-fieldset>
     </div>
 
     <div class="col-12 md:col-6">
       <p-fieldset legend="Key:Value Pipe" [toggleable]="true">
-
+        <ul>
+          <li *ngFor="let property of person | keyvalue">
+            <b>{{ property.key | titlecase }}: </b> <span>{{ property.value }}</span>
+          </li>
+        </ul>
       </p-fieldset>
     </div>
 
     <div class="col-12 md:col-6">
       <p-fieldset legend="Async Pipe" [toggleable]="true">
-
+        <p *ngIf="!(myObservable | async)">Resolving Observable...</p>
+        <pre>{{ myObservable | async }}</pre>
+        <hr>
+        <p *ngIf="!(myPromise | async)">Resolving Promise...</p>
+        <pre>{{ myPromise | async }}</pre>
       </p-fieldset>
     </div>
   </div>
