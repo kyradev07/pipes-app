@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'product-basic-page',
-  templateUrl: './basic-page.component.html',
-  styleUrl: './basic-page.component.css'
+  templateUrl: './basic-page.component.html'
 })
 export class BasicPageComponent {
   lower: string = 'smith';

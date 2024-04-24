@@ -18,8 +18,7 @@ type Person = {
 
 @Component({
   selector: 'product-no-common',
-  templateUrl: './no-common.component.html',
-  styleUrl: './no-common.component.css'
+  templateUrl: './no-common.component.html'
 })
 export class NoCommonComponent {
   //i18nSelect

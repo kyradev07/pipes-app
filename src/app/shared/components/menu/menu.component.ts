@@ -3,8 +3,7 @@ import { MenuItem } from "primeng/api";
 
 @Component({
   selector: 'shared-menu',
-  templateUrl: './menu.component.html',
-  styles: ``
+  templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
   items: MenuItem[] | undefined;
@@ -45,5 +44,4 @@ export class MenuComponent implements OnInit {
       }
     ];
   }
-
 }

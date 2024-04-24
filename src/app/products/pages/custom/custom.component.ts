@@ -3,8 +3,7 @@ import { Color, Hero } from "../../model/Hero";
 
 @Component({
   selector: 'product-custom',
-  templateUrl: './custom.component.html',
-  styles: ``
+  templateUrl: './custom.component.html'
 })
 export class CustomComponent implements OnInit {
 
