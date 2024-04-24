@@ -1,0 +1,41 @@
+<p-panel header="Custom Pipes" class="p-1">
+  <p>
+    Custom Pipes - Created by user
+  </p>
+
+  <p-card [style]="{'background': '#f9fafb'}" styleClass="mb-2">
+    <div class="flex justify-content-between">
+      <div>
+        <p-button class="mr-2" styleClass="p-button-info" label="{{toggleCase | toggleCase: isUpperCase}}"
+                  icon="pi pi-search" (click)="changeToggle()"></p-button>
+      </div>
+      <div>
+        <p-button class="mr-2" styleClass="p-button-danger" label="Reset" icon="pi pi-sort" (click)="resetArray()"></p-button>
+        <p-button class="mr-2" styleClass="p-button-secondary" label="By Name" icon="pi pi-sort" (click)="orderBy('name')"></p-button>
+        <p-button class="mr-2" styleClass="p-button-success" label="By Fly" icon="pi pi-sort" (click)="orderBy('canFly')"></p-button>
+        <p-button class="mr-2" styleClass="p-button-info" label="By Color" icon="pi pi-sort" (click)="orderBy('color')"></p-button>
+      </div>
+    </div>
+  </p-card>
+
+  <p-table [value]="heroes | sortBy:orderByKey" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="caption">
+      <h3>Heroes</h3>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Can Fly</th>
+        <th>Color</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-hero>
+      <tr>
+        <td>{{ hero.name }}</td>
+        <td>{{ hero.canFly | canFly }}</td>
+        <td>{{ hero.color }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</p-panel>
